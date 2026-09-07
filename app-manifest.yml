@@ -1,0 +1,13 @@
+# GitHub App Manifest — https://docs.github.com/apps/sharing-github-apps/registering-a-github-app-from-a-manifest
+name: RepoRadar
+url: https://github.com/KRYPTON0078/reporadar
+hook_attributes:
+  url: https://smee.io/YOUR_SMEE_CHANNEL
+public: true
+default_events:
+  - issues
+  - pull_request
+default_permissions:
+  issues: write
+  pull_requests: write
+  metadata: read
