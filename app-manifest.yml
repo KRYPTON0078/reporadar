@@ -1,8 +1,16 @@
-# GitHub App Manifest — https://docs.github.com/apps/sharing-github-apps/registering-a-github-app-from-a-manifest
+---
+# GitHub App manifest for RepoRadar
+# Docs: https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-using-a-manifest
 name: RepoRadar
 url: https://github.com/KRYPTON0078/reporadar
 hook_attributes:
-  url: https://smee.io/YOUR_SMEE_CHANNEL
+  url: https://smee.io/reporadar-temp
+  active: true
+redirect_url: https://github.com/KRYPTON0078/reporadar
+setup_url: https://github.com/KRYPTON0078/reporadar
+description: >
+  Minimal GitHub App (In development) that labels new issues/PRs with
+  needs-triage and posts a short triage checklist comment.
 public: true
 default_events:
   - issues

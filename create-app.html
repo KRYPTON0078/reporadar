@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Create RepoRadar GitHub App</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; }
+    button { font-size: 1.1rem; padding: 0.75rem 1.25rem; cursor: pointer; }
+    code { background: #f4f4f4; padding: 0.1rem 0.35rem; }
+  </style>
+</head>
+<body>
+  <h1>Create RepoRadar GitHub App</h1>
+  <p>You must be signed into GitHub in this browser. Click the button to open GitHub’s create-app flow with RepoRadar pre-filled (manifest).</p>
+  <form action="https://github.com/settings/apps/new?state=reporadar" method="post">
+    <input type="hidden" name="manifest" id="manifest" />
+    <button type="submit">Create RepoRadar GitHub App</button>
+  </form>
+  <p>After creation: generate a private key, install the App on <code>KRYPTON0078/reporadar</code>, then register at <a href="https://github.com/developer/register">github.com/developer/register</a>.</p>
+  <script>
+    const manifest = {
+      name: "RepoRadar",
+      url: "https://github.com/KRYPTON0078/reporadar",
+      hook_attributes: {
+        url: "https://smee.io/reporadar-temp",
+        active: true
+      },
+      redirect_url: "https://github.com/KRYPTON0078/reporadar",
+      description: "Minimal GitHub App (In development) that labels new issues/PRs with needs-triage and posts a short triage checklist comment.",
+      public: true,
+      default_events: ["issues", "pull_request"],
+      default_permissions: {
+        issues: "write",
+        pull_requests: "write",
+        metadata: "read"
+      }
+    };
+    document.getElementById("manifest").value = JSON.stringify(manifest);
+  </script>
+</body>
+</html>
